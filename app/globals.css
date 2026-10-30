@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
-/* Custom Theme Colors */
+/* Custom Theme Colors for Learn-Dev */
 :root {
-  /* Primary colors from user */
+  /* Primary colors from user specification */
   --color-primary-50: #c7f9cc;
   --color-primary-100: #80ed99;
   --color-primary-200: #57cc99;
@@ -10,7 +10,7 @@
   --color-dark: #001233;
   --color-secondary: #386641;
   
-  /* Derived colors */
+  /* Derived colors for theming */
   --background: #ffffff;
   --foreground: #001233;
   --card-bg: #ffffff;
@@ -36,21 +36,30 @@
   }
 }
 
+/* Tailwind Theme Configuration */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-roboto);
   --font-mono: var(--font-fira-code);
   
-  /* Custom color palette */
-  --color-lld: #22577a;
-  --color-hld: #386641;
-  --color-primary: #80ed99;
-  --color-accent: #57cc99;
+  /* Map custom colors to Tailwind palette */
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-accent: var(--color-accent);
+  --color-lld: var(--color-accent);
+  --color-hld: var(--color-secondary);
+  
+  /* Background and foreground colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Custom color classes */
+  --color-lld-500: #22577a;
+  --color-hld-500: #386641;
   --color-dark-bg: #001233;
-  --color-light-bg: #c7f9cc;
 }
 
+/* Base styles */
 body {
   background: var(--background);
   color: var(--foreground);
@@ -58,8 +67,9 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Custom utility classes */
+/* Custom utility classes for Learn-Dev */
 @layer utilities {
+  /* LLD (Low-Level Design) theme */
   .text-lld {
     color: var(--color-lld);
   }
@@ -70,6 +80,7 @@ body {
     border-color: var(--color-lld);
   }
   
+  /* HLD (High-Level Design) theme */
   .text-hld {
     color: var(--color-hld);
   }
@@ -80,13 +91,18 @@ body {
     border-color: var(--color-hld);
   }
   
+  /* Primary colors */
   .text-primary {
-    color: var(--color-primary);
+    color: var(--color-primary-100);
   }
   .bg-primary {
-    background-color: var(--color-primary);
+    background-color: var(--color-primary-100);
+  }
+  .bg-primary-50 {
+    background-color: var(--color-primary-50);
   }
   
+  /* Accent colors */
   .text-accent {
     color: var(--color-accent);
   }
@@ -94,12 +110,26 @@ body {
     background-color: var(--color-accent);
   }
   
+  /* Gradient backgrounds */
   .gradient-lld {
     background: linear-gradient(135deg, var(--color-lld) 0%, var(--color-accent) 100%);
   }
   
   .gradient-hld {
     background: linear-gradient(135deg, var(--color-hld) 0%, var(--color-secondary) 100%);
+  }
+  
+  /* Dark background */
+  .bg-dark {
+    background-color: var(--color-dark);
+  }
+  
+  /* Card styling */
+  .bg-card {
+    background-color: var(--card-bg);
+  }
+  .border-card {
+    border-color: var(--card-border);
   }
 }
 
@@ -144,4 +174,10 @@ code {
 
 .dark code {
   background: rgba(34, 87, 122, 0.2);
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--color-lld);
+  outline-offset: 2px;
 }
