@@ -1,6 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import {
+  Brain,
+  Server,
+  Code2,
+  BookOpen,
+  ArrowRight,
+  GraduationCap,
+  Cpu,
+  Network,
+  Cloud,
+  ExternalLink,
+  Lightbulb,
+  FolderGit2,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -10,11 +24,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDEyMzMiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
         <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
+            <div className="flex justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-lld rounded-2xl flex items-center justify-center shadow-lg">
+                <Brain className="w-8 h-8 text-white" />
+              </div>
+            </div>
             <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
               <span className="text-lld">Learn</span>
               <span className="text-hld">Dev</span>
             </h1>
-            <p className="text-xl md:text-2xl text-text-secondary mb-4 font-medium">
+            <p className="text-xl md:text-2xl text-text-secondary mb-4 font-medium flex items-center justify-center gap-2">
+              <BookOpen className="w-6 h-6" />
               Free Open Source Community
             </p>
             <p className="text-lg md:text-xl text-text-muted max-w-2xl mx-auto mb-12">
@@ -23,14 +43,16 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#lld"
-                className="px-8 py-4 bg-lld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:scale-105"
+                className="px-8 py-4 bg-lld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
               >
+                <Cpu className="w-5 h-5" />
                 Explore LLD
               </Link>
               <Link
                 href="#hld"
-                className="px-8 py-4 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:scale-105"
+                className="px-8 py-4 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 text-lg shadow-lg hover:shadow-xl hover:scale-105 inline-flex items-center justify-center gap-2"
               >
+                <Server className="w-5 h-5" />
                 Explore HLD
               </Link>
             </div>
@@ -61,7 +83,7 @@ export default function Home() {
             <div className="bg-gradient-lld p-8 md:p-12 text-white">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
-                  <span className="text-3xl font-bold">LLD</span>
+                  <Cpu className="w-8 h-8" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold">Low-Level Design</h2>
               </div>
@@ -72,9 +94,9 @@ export default function Home() {
             <div className="p-8 md:p-12">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* LLD Cards */}
-                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-lld bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-lld text-2xl font-bold">C</span>
+                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+                  <div className="w-12 h-12 bg-lld bg-opacity-10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-lld group-hover:bg-opacity-20 transition-colors">
+                    <Code2 className="w-6 h-6 text-lld group-hover:text-lld group-hover:scale-110 transition-transform" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary mb-2">Classes & Objects</h3>
                   <p className="text-text-muted mb-4">
@@ -84,13 +106,13 @@ export default function Home() {
                     href="/lld/classes"
                     className="text-lld font-medium hover:text-lld inline-flex items-center gap-2"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
                 
-                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-lld bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-lld text-2xl font-bold">D</span>
+                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+                  <div className="w-12 h-12 bg-lld bg-opacity-10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-lld group-hover:bg-opacity-20 transition-colors">
+                    <Network className="w-6 h-6 text-lld group-hover:text-lld group-hover:scale-110 transition-transform" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary mb-2">Design Patterns</h3>
                   <p className="text-text-muted mb-4">
@@ -100,13 +122,13 @@ export default function Home() {
                     href="/lld/patterns"
                     className="text-lld font-medium hover:text-lld inline-flex items-center gap-2"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
                 
-                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-lld bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-lld text-2xl font-bold">S</span>
+                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+                  <div className="w-12 h-12 bg-lld bg-opacity-10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-lld group-hover:bg-opacity-20 transition-colors">
+                    <GraduationCap className="w-6 h-6 text-lld group-hover:text-lld group-hover:scale-110 transition-transform" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary mb-2">SOLID Principles</h3>
                   <p className="text-text-muted mb-4">
@@ -116,7 +138,7 @@ export default function Home() {
                     href="/lld/solid"
                     className="text-lld font-medium hover:text-lld inline-flex items-center gap-2"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -124,13 +146,14 @@ export default function Home() {
               {/* Visualization placeholder */}
               <div className="mt-12 bg-gray-50 dark:bg-gray-800 rounded-xl p-8 border border-card-border">
                 <h4 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
-                  <span className="w-3 h-3 bg-lld rounded-full"></span>
+                  <Lightbulb className="w-5 h-5 text-lld" />
                   Interactive Visualization
                 </h4>
                 <p className="text-text-muted mb-6">
                   Visual representations of LLD concepts coming soon!
                 </p>
                 <div className="bg-white dark:bg-gray-700 rounded-lg p-6 border border-dashed border-gray-300 dark:border-gray-600 text-center text-text-muted">
+                  <Code2 className="w-12 h-12 mx-auto mb-2 opacity-50" />
                   <p>LLD Visualization Area</p>
                   <p className="text-sm mt-2">Class diagrams, sequence diagrams, and more</p>
                 </div>
@@ -145,7 +168,7 @@ export default function Home() {
             <div className="bg-gradient-hld p-8 md:p-12 text-white">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center">
-                  <span className="text-3xl font-bold">HLD</span>
+                  <Server className="w-8 h-8" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold">High-Level Design</h2>
               </div>
@@ -156,9 +179,9 @@ export default function Home() {
             <div className="p-8 md:p-12">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* HLD Cards */}
-                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-hld bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-hld text-2xl font-bold">S</span>
+                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+                  <div className="w-12 h-12 bg-hld bg-opacity-10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-hld group-hover:bg-opacity-20 transition-colors">
+                    <Network className="w-6 h-6 text-hld group-hover:text-hld group-hover:scale-110 transition-transform" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary mb-2">Scalability</h3>
                   <p className="text-text-muted mb-4">
@@ -168,13 +191,13 @@ export default function Home() {
                     href="/hld/scalability"
                     className="text-hld font-medium hover:text-hld inline-flex items-center gap-2"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
                 
-                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-hld bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-hld text-2xl font-bold">D</span>
+                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+                  <div className="w-12 h-12 bg-hld bg-opacity-10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-hld group-hover:bg-opacity-20 transition-colors">
+                    <Server className="w-6 h-6 text-hld group-hover:text-hld group-hover:scale-110 transition-transform" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary mb-2">Distributed Systems</h3>
                   <p className="text-text-muted mb-4">
@@ -184,13 +207,13 @@ export default function Home() {
                     href="/hld/distributed"
                     className="text-hld font-medium hover:text-hld inline-flex items-center gap-2"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
                 
-                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow">
+                <div className="bg-white dark:bg-card-bg rounded-xl p-6 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
                   <div className="w-12 h-12 bg-hld bg-opacity-10 rounded-lg flex items-center justify-center mb-4">
-                    <span className="text-hld text-2xl font-bold">C</span>
+                    <Cloud className="w-6 h-6 text-hld" />
                   </div>
                   <h3 className="text-xl font-bold text-text-primary mb-2">Caching</h3>
                   <p className="text-text-muted mb-4">
@@ -200,7 +223,7 @@ export default function Home() {
                     href="/hld/caching"
                     className="text-hld font-medium hover:text-hld inline-flex items-center gap-2"
                   >
-                    Learn More →
+                    Learn More <ArrowRight className="w-4 h-4" />
                   </Link>
                 </div>
               </div>
@@ -208,13 +231,14 @@ export default function Home() {
               {/* Visualization placeholder */}
               <div className="mt-12 bg-gray-50 dark:bg-gray-800 rounded-xl p-8 border border-card-border">
                 <h4 className="text-lg font-bold text-text-primary mb-4 flex items-center gap-2">
-                  <span className="w-3 h-3 bg-hld rounded-full"></span>
+                  <Lightbulb className="w-5 h-5 text-hld" />
                   Interactive Visualization
                 </h4>
                 <p className="text-text-muted mb-6">
                   Visual representations of HLD concepts coming soon!
                 </p>
                 <div className="bg-white dark:bg-gray-700 rounded-lg p-6 border border-dashed border-gray-300 dark:border-gray-600 text-center text-text-muted">
+                  <Server className="w-12 h-12 mx-auto mb-2 opacity-50" />
                   <p>HLD Visualization Area</p>
                   <p className="text-sm mt-2">System architecture diagrams, flow charts, and more</p>
                 </div>
@@ -238,13 +262,14 @@ export default function Home() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-text-primary text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2 justify-center"
             >
-              <span className="text-xl">⚡</span>
+              <FolderGit2 className="w-5 h-5" />
               View on GitHub
             </a>
             <a
               href="#"
-              className="px-8 py-4 border-2 border-text-primary text-text-primary font-bold rounded-lg hover:bg-text-primary hover:text-white transition-all duration-300"
+              className="px-8 py-4 border-2 border-text-primary text-text-primary font-bold rounded-lg hover:bg-text-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2"
             >
+              <ExternalLink className="w-5 h-5" />
               Contribute
             </a>
           </div>
@@ -256,20 +281,33 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2">
-                <span className="text-lld">Learn</span>
-                <span className="text-hld">Dev</span>
-              </h3>
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                <BookOpen className="w-8 h-8 text-lld" />
+                <h3 className="text-2xl font-bold">
+                  <span className="text-lld">Learn</span>
+                  <span className="text-hld">Dev</span>
+                </h3>
+              </div>
               <p className="text-white text-opacity-70">
                 Open Source System Design Learning Platform
               </p>
             </div>
             <div className="flex gap-6 text-sm">
-              <Link href="#" className="hover:text-lld transition-colors">Home</Link>
-              <Link href="#lld" className="hover:text-lld transition-colors">LLD</Link>
-              <Link href="#hld" className="hover:text-lld transition-colors">HLD</Link>
-              <Link href="#" className="hover:text-lld transition-colors">About</Link>
-              <Link href="#" className="hover:text-lld transition-colors">Contact</Link>
+              <Link href="#" className="hover:text-lld transition-colors inline-flex items-center gap-1">
+                <Cpu className="w-4 h-4" /> Home
+              </Link>
+              <Link href="#lld" className="hover:text-lld transition-colors inline-flex items-center gap-1">
+                <Code2 className="w-4 h-4" /> LLD
+              </Link>
+              <Link href="#hld" className="hover:text-lld transition-colors inline-flex items-center gap-1">
+                <Server className="w-4 h-4" /> HLD
+              </Link>
+              <Link href="#" className="hover:text-lld transition-colors inline-flex items-center gap-1">
+                <BookOpen className="w-4 h-4" /> About
+              </Link>
+              <Link href="#" className="hover:text-lld transition-colors inline-flex items-center gap-1">
+                <ExternalLink className="w-4 h-4" /> Contact
+              </Link>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-white border-opacity-20 text-center text-sm text-white text-opacity-50">

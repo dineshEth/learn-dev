@@ -1,6 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import {
+  Server,
+  ArrowRight,
+  ArrowLeft,
+  Scaling,
+  Network,
+  Database,
+  Zap,
+  BookOpen,
+  Cpu,
+  Lightbulb,
+  Grid3X3,
+  Ban,
+} from "lucide-react";
 
 export default function HLDPage() {
   return (
@@ -10,14 +24,19 @@ export default function HLDPage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
+              <BookOpen className="w-8 h-8 text-lld" />
               <h1 className="text-2xl font-bold">
                 <span className="text-lld">Learn</span>
                 <span className="text-hld">Dev</span>
               </h1>
             </Link>
             <nav className="flex gap-6">
-              <Link href="/lld" className="font-medium text-text-secondary hover:text-lld transition-colors">LLD</Link>
-              <Link href="/hld" className="font-medium text-hld border-b-2 border-hld pb-1">HLD</Link>
+              <Link href="/lld" className="font-medium text-text-secondary hover:text-lld transition-colors inline-flex items-center gap-1">
+                <Cpu className="w-4 h-4" /> LLD
+              </Link>
+              <Link href="/hld" className="font-medium text-hld border-b-2 border-hld pb-1 inline-flex items-center gap-1">
+                <Server className="w-4 h-4" /> HLD
+              </Link>
             </nav>
           </div>
         </div>
@@ -28,6 +47,11 @@ export default function HLDPage() {
         <div className="max-w-4xl mx-auto">
           {/* Page Header */}
           <div className="text-center mb-16">
+            <div className="flex justify-center mb-4">
+              <div className="w-20 h-20 bg-hld bg-opacity-10 rounded-2xl flex items-center justify-center">
+                <Server className="w-10 h-10 text-hld" />
+              </div>
+            </div>
             <h1 className="text-4xl md:text-5xl font-black text-hld mb-4">High-Level Design</h1>
             <p className="text-xl text-text-secondary max-w-2xl mx-auto">
               Understand system architecture and design at scale.
@@ -36,9 +60,9 @@ export default function HLDPage() {
 
           {/* Topic Grid */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-hld text-3xl font-bold">S</span>
+            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hld group-hover:bg-opacity-20 transition-colors">
+                <Scaling className="w-7 h-7 text-hld group-hover:text-hld group-hover:scale-110 transition-transform" />
               </div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">Scalability</h2>
               <p className="text-text-muted mb-6">
@@ -46,15 +70,15 @@ export default function HLDPage() {
               </p>
               <Link
                 href="/hld/scalability"
-                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300"
+                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2"
               >
-                Explore Scalability →
+                Explore Scalability <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-hld text-3xl font-bold">D</span>
+            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hld group-hover:bg-opacity-20 transition-colors">
+                <Network className="w-7 h-7 text-hld group-hover:text-hld group-hover:scale-110 transition-transform" />
               </div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">Distributed Systems</h2>
               <p className="text-text-muted mb-6">
@@ -62,15 +86,15 @@ export default function HLDPage() {
               </p>
               <Link
                 href="/hld/distributed"
-                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300"
+                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2"
               >
-                Explore Distributed Systems →
+                Explore Distributed Systems <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-hld text-3xl font-bold">C</span>
+            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hld group-hover:bg-opacity-20 transition-colors">
+                <Zap className="w-7 h-7 text-hld group-hover:text-hld group-hover:scale-110 transition-transform" />
               </div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">Caching</h2>
               <p className="text-text-muted mb-6">
@@ -78,15 +102,15 @@ export default function HLDPage() {
               </p>
               <Link
                 href="/hld/caching"
-                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300"
+                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2"
               >
-                Explore Caching →
+                Explore Caching <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-hld text-3xl font-bold">D</span>
+            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hld group-hover:bg-opacity-20 transition-colors">
+                <Database className="w-7 h-7 text-hld group-hover:text-hld group-hover:scale-110 transition-transform" />
               </div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">Databases</h2>
               <p className="text-text-muted mb-6">
@@ -94,15 +118,15 @@ export default function HLDPage() {
               </p>
               <Link
                 href="/hld/databases"
-                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300"
+                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2"
               >
-                Explore Databases →
+                Explore Databases <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-hld text-3xl font-bold">L</span>
+            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hld group-hover:bg-opacity-20 transition-colors">
+                <Ban className="w-7 h-7 text-hld group-hover:text-hld group-hover:scale-110 transition-transform" />
               </div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">Load Balancing</h2>
               <p className="text-text-muted mb-6">
@@ -110,15 +134,15 @@ export default function HLDPage() {
               </p>
               <Link
                 href="/hld/load-balancing"
-                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300"
+                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2"
               >
-                Explore Load Balancing →
+                Explore Load Balancing <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6">
-                <span className="text-hld text-3xl font-bold">M</span>
+            <div className="bg-card-bg rounded-xl p-8 shadow-md border border-card-border hover:shadow-lg transition-shadow group">
+              <div className="w-14 h-14 bg-hld bg-opacity-10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-hld group-hover:bg-opacity-20 transition-colors">
+                <Grid3X3 className="w-7 h-7 text-hld group-hover:text-hld group-hover:scale-110 transition-transform" />
               </div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">Microservices</h2>
               <p className="text-text-muted mb-6">
@@ -126,9 +150,9 @@ export default function HLDPage() {
               </p>
               <Link
                 href="/hld/microservices"
-                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300"
+                className="inline-block px-6 py-3 bg-hld text-white font-bold rounded-lg hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2"
               >
-                Explore Microservices →
+                Explore Microservices <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -136,28 +160,37 @@ export default function HLDPage() {
           {/* Visualization Section */}
           <section className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-8 md:p-12 border border-card-border">
             <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-text-primary mb-2">Interactive HLD Visualizations</h2>
+              <h2 className="text-2xl font-bold text-text-primary mb-2 inline-flex items-center gap-2">
+                <Lightbulb className="w-6 h-6 text-hld" />
+                Interactive HLD Visualizations
+              </h2>
               <p className="text-text-muted">
                 Visual representations to help you understand HLD concepts better.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white dark:bg-card-bg rounded-xl p-6 border border-card-border">
-                <h3 className="font-bold text-text-primary mb-2">System Architecture</h3>
+                <h3 className="font-bold text-text-primary mb-2 inline-flex items-center gap-2">
+                  <Network className="w-5 h-5 text-hld" />
+                  System Architecture
+                </h3>
                 <p className="text-sm text-text-muted mb-4">
                   Visualize microservices architecture and component interactions.
                 </p>
                 <div className="bg-gray-100 dark:bg-gray-700 rounded-lg h-48 flex items-center justify-center text-text-muted">
-                  <p>System Architecture Diagram</p>
+                  <Server className="w-12 h-12 opacity-50" />
                 </div>
               </div>
               <div className="bg-white dark:bg-card-bg rounded-xl p-6 border border-card-border">
-                <h3 className="font-bold text-text-primary mb-2">Request Flow</h3>
+                <h3 className="font-bold text-text-primary mb-2 inline-flex items-center gap-2">
+                  <ArrowRight className="w-5 h-5 text-hld" />
+                  Request Flow
+                </h3>
                 <p className="text-sm text-text-muted mb-4">
                   Understand how requests flow through a distributed system.
                 </p>
                 <div className="bg-gray-100 dark:bg-gray-700 rounded-lg h-48 flex items-center justify-center text-text-muted">
-                  <p>Request Flow Visualization</p>
+                  <Network className="w-12 h-12 opacity-50" />
                 </div>
               </div>
             </div>
@@ -169,7 +202,8 @@ export default function HLDPage() {
               href="/"
               className="inline-flex items-center gap-2 text-text-secondary hover:text-hld transition-colors"
             >
-              ← Back to Home
+              <ArrowLeft className="w-4 h-4" />
+              Back to Home
             </Link>
           </div>
         </div>
