@@ -1,26 +1,147 @@
 @import "tailwindcss";
 
+/* Custom Theme Colors */
 :root {
+  /* Primary colors from user */
+  --color-primary-50: #c7f9cc;
+  --color-primary-100: #80ed99;
+  --color-primary-200: #57cc99;
+  --color-accent: #22577a;
+  --color-dark: #001233;
+  --color-secondary: #386641;
+  
+  /* Derived colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #001233;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --text-primary: #001233;
+  --text-secondary: #386641;
+  --text-muted: #6b7280;
+  
+  /* Fonts */
+  --font-sans: var(--font-roboto);
+  --font-mono: var(--font-fira-code);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #001233;
+    --foreground: #c7f9cc;
+    --card-bg: #0a1a2a;
+    --card-border: #22577a;
+    --text-primary: #c7f9cc;
+    --text-secondary: #80ed99;
+    --text-muted: #9ca3af;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-roboto);
+  --font-mono: var(--font-fira-code);
+  
+  /* Custom color palette */
+  --color-lld: #22577a;
+  --color-hld: #386641;
+  --color-primary: #80ed99;
+  --color-accent: #57cc99;
+  --color-dark-bg: #001233;
+  --color-light-bg: #c7f9cc;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-lld {
+    color: var(--color-lld);
+  }
+  .bg-lld {
+    background-color: var(--color-lld);
+  }
+  .border-lld {
+    border-color: var(--color-lld);
+  }
+  
+  .text-hld {
+    color: var(--color-hld);
+  }
+  .bg-hld {
+    background-color: var(--color-hld);
+  }
+  .border-hld {
+    border-color: var(--color-hld);
+  }
+  
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  
+  .text-accent {
+    color: var(--color-accent);
+  }
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+  
+  .gradient-lld {
+    background: linear-gradient(135deg, var(--color-lld) 0%, var(--color-accent) 100%);
+  }
+  
+  .gradient-hld {
+    background: linear-gradient(135deg, var(--color-hld) 0%, var(--color-secondary) 100%);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-lld);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Code block styling */
+pre {
+  font-family: var(--font-mono), monospace;
+  background: rgba(0, 18, 51, 0.05);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  font-family: var(--font-mono), monospace;
+  background: rgba(0, 18, 51, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+/* Dark mode adjustments */
+.dark pre {
+  background: rgba(0, 18, 51, 0.3);
+}
+
+.dark code {
+  background: rgba(34, 87, 122, 0.2);
 }
